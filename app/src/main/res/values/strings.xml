@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RoomRecyclerViewTest</string>
+    <string name="your_message">Ваше сообщение</string>
+    <string name="send">Send</string>
+</resources>

@@ -6,12 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roomrecyclerviewtest.Adapters.MoneyAccountAdapter
+import com.example.roomrecyclerviewtest.Interfaces.OnMoneyAccountClickListener
 import com.example.roomrecyclerviewtest.Models.MoneyAccount
 
 import com.example.roomrecyclerviewtest.R
@@ -25,6 +28,8 @@ class MainFragment : Fragment() {
 
     lateinit var adapter: MoneyAccountAdapter
     private var moneyAccountViewModel: MoneyAccountViewModel? = null
+
+
 
 
     override fun onCreateView(
@@ -51,9 +56,16 @@ class MainFragment : Fragment() {
 
     }
 
-    private fun renderMoneyAccountslist(moneyAccounts: List<MoneyAccount>?){
+    private fun renderMoneyAccountslist(moneyAccounts: List<MoneyAccount>){
 
         adapter = MoneyAccountAdapter(context!!, moneyAccounts)
+        adapter.attachCalback(object : OnMoneyAccountClickListener {
+            override fun onMoneyAccountClickListener(moneyAccount: MoneyAccount) {
+                openAboutMoneyAccountFragment(moneyAccount.id)
+            }
+
+
+        })
         val layoutManager = LinearLayoutManager(context!!)
         layoutManager.stackFromEnd = true
         recyclerView.layoutManager = layoutManager
@@ -61,4 +73,13 @@ class MainFragment : Fragment() {
 
 //
     }
+
+
+    fun openAboutMoneyAccountFragment(id: Int) {
+
+        var bundle = bundleOf("id" to id)
+        view?.findNavController()
+            ?.navigate(R.id.action_mainFragment_to_fragmentAboutMoneyAccount, bundle )
+    }
+
 }

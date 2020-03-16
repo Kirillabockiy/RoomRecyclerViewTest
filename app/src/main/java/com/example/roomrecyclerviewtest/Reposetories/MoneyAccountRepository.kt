@@ -4,10 +4,7 @@ import android.app.Application
 import com.example.roomrecyclerviewtest.Dao.MoneyAccountDao
 import com.example.roomrecyclerviewtest.DataBase.MoneyAccountDataBase
 import com.example.roomrecyclerviewtest.Models.MoneyAccount
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 class MoneyAccountRepository(application: Application) : CoroutineScope {
@@ -26,8 +23,37 @@ class MoneyAccountRepository(application: Application) : CoroutineScope {
 
     fun getMoneyAccounts() = moneyAccountDao?.getMoneyAccounts()
 
+    fun loadMoneyAccountbyId(id: Int): MoneyAccount? {
+
+
+        var item: MoneyAccount? = null
+
+        GlobalScope.launch() {
+            item = loadMoneyAccountBG(id)
+
+             }
+
+
+        return item
+    }
+
     fun deleteAllMoneyAccounts() {
+
+
         launch { deleteAllMoneyAccountsBG() }
+
+    }
+
+    suspend fun loadMoneyAccountBG(id: Int): MoneyAccount? {
+
+//         var item: MoneyAccount? = null
+//         withContext(Dispatchers.IO) {
+//            item =
+//
+//        }
+
+        return moneyAccountDao?.loadMoneyAccountById(id)
+
 
     }
 
@@ -45,7 +71,7 @@ class MoneyAccountRepository(application: Application) : CoroutineScope {
     }
 
     private suspend fun deleteAllMoneyAccountsBG() {
-        withContext(Dispatchers.IO) {
+         withContext(Dispatchers.IO) {
             moneyAccountDao?.deleteAllMoneyAccounts()
 
         }

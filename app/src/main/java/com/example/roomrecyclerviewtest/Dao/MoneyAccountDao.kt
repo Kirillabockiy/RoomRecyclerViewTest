@@ -19,4 +19,10 @@ interface MoneyAccountDao {
 
     @Query("DELETE FROM money_account_table")
     fun deleteAllMoneyAccounts()
+
+    @Query("DELETE FROM money_account_table WHERE id = :id")
+    fun deleeteMoneyAccontById(id: Int)
+
+    @Query("SELECT * FROM money_account_table WHERE id =:id")
+    fun loadMoneyAccountById(id: Int): MoneyAccount
 }

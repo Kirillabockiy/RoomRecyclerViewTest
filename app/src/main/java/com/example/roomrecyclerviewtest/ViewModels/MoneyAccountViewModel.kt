@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.example.roomrecyclerviewtest.Models.MoneyAccount
 import com.example.roomrecyclerviewtest.Reposetories.MoneyAccountRepository
+import kotlinx.coroutines.Job
 
 class MoneyAccountViewModel (application: Application) : AndroidViewModel(application) {
 
@@ -13,5 +14,12 @@ class MoneyAccountViewModel (application: Application) : AndroidViewModel(applic
 //
     fun setMoneyAccount(moneyAccount: MoneyAccount) { repository.setMoneyAccount(moneyAccount)}
     fun deleteAllMoneyAccounts() { repository.deleteAllMoneyAccounts()}
+
+    fun loadmoneyAccountbyId(id: Int): MoneyAccount? {
+        return repository.loadMoneyAccountbyId(id)
+
+
+
+    }
 
 }

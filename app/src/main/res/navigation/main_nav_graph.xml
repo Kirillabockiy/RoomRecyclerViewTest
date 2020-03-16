@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_fragmentAddMoneyAccount"
             app:destination="@id/fragmentAddMoneyAccount" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentAboutMoneyAccount"
+            app:destination="@id/fragmentAboutMoneyAccount" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAddMoneyAccount"
@@ -22,5 +25,16 @@
         <action
             android:id="@+id/action_fragmentAddMoneyAccount_to_mainFragment"
             app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAboutMoneyAccount"
+        android:name="com.example.roomrecyclerviewtest.Fragments.FragmentAboutMoneyAccount"
+        android:label="fragment_about_money_account"
+        tools:layout="@layout/fragment_about_money_account" >
+        <argument
+            android:name="money_account_id"
+            app:argType="integer[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>

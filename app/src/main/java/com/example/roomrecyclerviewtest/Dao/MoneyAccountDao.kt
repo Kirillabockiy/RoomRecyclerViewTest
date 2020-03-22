@@ -24,5 +24,5 @@ interface MoneyAccountDao {
     fun deleeteMoneyAccontById(id: Int)
 
     @Query("SELECT * FROM money_account_table WHERE id =:id")
-    fun loadMoneyAccountById(id: Int): MoneyAccount
+    fun loadMoneyAccountById(id: Int): LiveData<MoneyAccount>
 }

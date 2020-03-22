@@ -15,11 +15,11 @@ class MoneyAccountViewModel (application: Application) : AndroidViewModel(applic
     fun setMoneyAccount(moneyAccount: MoneyAccount) { repository.setMoneyAccount(moneyAccount)}
     fun deleteAllMoneyAccounts() { repository.deleteAllMoneyAccounts()}
 
-    fun loadmoneyAccountbyId(id: Int): MoneyAccount? {
-        return repository.loadMoneyAccountbyId(id)
+    fun loadmoneyAccountbyId(id: Int) = repository.loadMoneyAccountbyId(id)
 
 
 
-    }
+
+
 
 }

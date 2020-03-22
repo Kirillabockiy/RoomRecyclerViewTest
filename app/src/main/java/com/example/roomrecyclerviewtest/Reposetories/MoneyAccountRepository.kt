@@ -23,19 +23,21 @@ class MoneyAccountRepository(application: Application) : CoroutineScope {
 
     fun getMoneyAccounts() = moneyAccountDao?.getMoneyAccounts()
 
-    fun loadMoneyAccountbyId(id: Int): MoneyAccount? {
+    fun loadMoneyAccountbyId(id: Int) = moneyAccountDao?.loadMoneyAccountById(id)
 
-
-        var item: MoneyAccount? = null
-
-        GlobalScope.launch() {
-            item = loadMoneyAccountBG(id)
-
-             }
-
-
-        return item
-    }
+//    fun loadMoneyAccountbyId(id: Int): MoneyAccount? {
+//
+//
+//        var item: MoneyAccount? = null
+//
+//        GlobalScope.launch() {
+//            item = loadMoneyAccountBG(id)
+//
+//             }
+//
+//
+//        return item
+//    }
 
     fun deleteAllMoneyAccounts() {
 
@@ -44,18 +46,18 @@ class MoneyAccountRepository(application: Application) : CoroutineScope {
 
     }
 
-    suspend fun loadMoneyAccountBG(id: Int): MoneyAccount? {
-
+//    private suspend fun loadMoneyAccountBG(id: Int): MoneyAccount? {
+//
 //         var item: MoneyAccount? = null
 //         withContext(Dispatchers.IO) {
-//            item =
+//            item = moneyAccountDao?.loadMoneyAccountById(id)
 //
 //        }
-
-        return moneyAccountDao?.loadMoneyAccountById(id)
-
-
-    }
+//
+//        return item
+//
+//
+//    }
 
     fun setMoneyAccount(moneyAccount: MoneyAccount) {
         launch { setMoneyAccountBG(moneyAccount) }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <item
+        android:id="@+id/action_overview"
+        android:enabled="true"
+        android:icon="@drawable/ic_eye"
+        android:title="@string/overview"
+        app:showAsAction="always" />
+
+
+
+    <item
+        android:enabled="false"
+        android:title="@string/add"
+        app:showAsAction="always"
+        android:checkable="false"
+        android:checked="false"
+        />
+
+
+
+    <item
+
+        android:id="@+id/action_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings"
+        app:showAsAction="withText" />
+</menu>

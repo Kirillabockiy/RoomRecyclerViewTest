@@ -14,7 +14,7 @@ import com.example.roomrecyclerviewtest.ViewModels.MoneyAccountViewModel
 import kotlinx.android.synthetic.main.fragment_add_money_account.*
 
 
-class FragmentAddMoneyAccount : Fragment() {
+class AddMoneyAccountFragment : Fragment() {
 
     private var moneyAccountViewModel: MoneyAccountViewModel? = null
 
@@ -47,7 +47,7 @@ class FragmentAddMoneyAccount : Fragment() {
 
             moneyAccountViewModel?.setMoneyAccount(moneyAccount)
 
-            view.findNavController().navigate(R.id.action_fragmentAddMoneyAccount_to_mainFragment)
+
         })
 
 

@@ -5,4 +5,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="overview">Обзор</string>
+    <string name="add">Добавить</string>
+    <string name="settings">Настройки</string>
 </resources>

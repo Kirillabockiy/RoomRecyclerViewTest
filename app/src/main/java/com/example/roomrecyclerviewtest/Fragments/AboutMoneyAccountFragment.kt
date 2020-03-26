@@ -12,10 +12,9 @@ import com.example.roomrecyclerviewtest.R
 import com.example.roomrecyclerviewtest.ViewModels.MoneyAccountViewModel
 import kotlinx.android.synthetic.main.fragment_about_money_account.*
 
-/**
- * A simple [Fragment] subclass.
- */
-class FragmentAboutMoneyAccount : Fragment() {
+
+class AboutMoneyAccountFragment : Fragment() {
+
     private var moneyAccountViewModel: MoneyAccountViewModel? = null
     private var ID_ITEM: Int? = null
     override fun onCreateView(

@@ -19,6 +19,7 @@ import com.example.roomrecyclerviewtest.Models.MoneyAccount
 
 import com.example.roomrecyclerviewtest.R
 import com.example.roomrecyclerviewtest.ViewModels.MoneyAccountViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
@@ -48,11 +49,11 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        add_main_account_fab.setOnClickListener(View.OnClickListener {
-
-        view.findNavController().navigate(R.id.action_mainFragment_to_fragmentAddMoneyAccount)
-
-        })
+//        fab.setOnClickListener(View.OnClickListener {
+//
+//        view.findNavController().navigate(R.id.action_mainFragment_to_fragmentAddMoneyAccount)
+//
+//        })
 
     }
 
@@ -67,8 +68,9 @@ class MainFragment : Fragment() {
 
         })
         val layoutManager = LinearLayoutManager(context!!)
-        layoutManager.stackFromEnd = true
+//        layoutManager.stackFromEnd = true
         recyclerView.layoutManager = layoutManager
+//        layoutManager.scrollToPosition(0)
         recyclerView.adapter = adapter
 
 //

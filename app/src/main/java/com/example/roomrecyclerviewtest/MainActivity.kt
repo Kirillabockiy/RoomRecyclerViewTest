@@ -10,6 +10,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.roomrecyclerviewtest.Models.MoneyAccount
@@ -30,6 +32,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        val navController = findNavController(R.id.nav_host_fragment)
+        Navigation.setViewNavController(fab, navController)
+        fab.setOnClickListener {
+            navController.navigate(R.id.action_global_fragmentAddMoneyAccount)
+        }
+
+//        fab.setOnClickListener(View.OnClickListener {
+//            navController.navigate(R.id.action_global_fragmentAddMoneyAccount)
+//
+//        })
 
 //        messageViewModel = ViewModelProviders.of(this).get(MessageViewModel::class.java)
 //

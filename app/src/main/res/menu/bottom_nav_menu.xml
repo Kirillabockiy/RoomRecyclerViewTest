@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <item
+        android:id="@+id/overviewFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_eye"
+        android:title="@string/overview"
+        app:showAsAction="always"
+
+        />
+
+    <item
+        android:id="@+id/accountsMainFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_credit_card"
+        android:title="@string/accounts"
+        app:showAsAction="always" />
+
+
+
+
+
+    <item
+
+        android:id="@+id/operationsFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_graphic"
+        android:title="@string/operations"
+        app:showAsAction="withText" />
+
+
+    <item
+
+        android:id="@+id/moreFunctionsFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_more"
+        android:title="@string/More"
+        app:showAsAction="withText" />
+</menu>

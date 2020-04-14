@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.roomrecyclerviewtest.Models.MoneyAccount
+//import com.example.roomrecyclerviewtest.Models.MoneyAccount
 import com.example.roomrecyclerviewtest.R
 import com.example.roomrecyclerviewtest.ViewModels.MoneyAccountViewModel
 import kotlinx.android.synthetic.main.fragment_about_money_account.*
@@ -24,9 +24,7 @@ class AboutMoneyAccountFragment : Fragment() {
        var view = inflater.inflate(R.layout.fragment_about_money_account, container, false)
 
 
-        moneyAccountViewModel = ViewModelProviders.of(this).get(MoneyAccountViewModel::class.java)
-        ID_ITEM = arguments?.get("id") as Int
-        moneyAccountViewModel?.loadmoneyAccountbyId(arguments?.get("id") as Int)?.observe(viewLifecycleOwner, Observer<MoneyAccount> { setData(it) })
+
 
 
 
@@ -52,15 +50,15 @@ class AboutMoneyAccountFragment : Fragment() {
 
 
 
-    fun setData(model: MoneyAccount?) {
-
-        if (model != null) {
-            txt_money_account_name.text = model.name
-            txt_money_account_type.text = model.accountType
-            txt_money_account_balance.text = model.currentBalance
-        }
-
-    }
+//    fun setData(model: MoneyAccount?) {
+//
+//        if (model != null) {
+//            txt_money_account_name.text = model.name
+//            txt_money_account_type.text = model.accountType
+//            txt_money_account_balance.text = model.currentBalance
+//        }
+//
+//    }
 
 
 }

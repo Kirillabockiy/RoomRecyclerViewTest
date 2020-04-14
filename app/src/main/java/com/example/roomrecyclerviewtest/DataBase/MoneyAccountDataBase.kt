@@ -6,9 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.roomrecyclerviewtest.Dao.MoneyAccountDao
 import com.example.roomrecyclerviewtest.Models.MoneyAccount
+//import com.example.roomrecyclerviewtest.Models.MoneyAccount
+import com.example.roomrecyclerviewtest.Models.CardMoneyAccount
+import com.example.roomrecyclerviewtest.Models.CashMoneyAccount
 
 
-@Database(entities = [MoneyAccount::class], version = 1, exportSchema = false)
+@Database(entities = [CardMoneyAccount::class, MoneyAccount::class, CashMoneyAccount::class], version = 1, exportSchema = false)
 abstract class MoneyAccountDataBase : RoomDatabase() {
 
     abstract fun moneyAccountDao(): MoneyAccountDao

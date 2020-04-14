@@ -3,22 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/overviewAllFragment">
+    app:startDestination="@id/accountsMainFragment">
 
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.roomrecyclerviewtest.Fragments.MainFragment"
-        android:label="money_account_item"
-        tools:layout="@layout/money_account_item" >
-        <action
-            android:id="@+id/action_mainFragment_to_fragmentAboutMoneyAccount"
-            app:destination="@id/fragmentAboutMoneyAccount" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragmentAddMoneyAccount"
-        android:name="com.example.roomrecyclerviewtest.Fragments.AddMoneyAccountFragment"
-        android:label="fragment_add_money_account"
-        tools:layout="@layout/fragment_add_money_account" />
     <fragment
         android:id="@+id/fragmentAboutMoneyAccount"
         android:name="com.example.roomrecyclerviewtest.Fragments.AboutMoneyAccountFragment"
@@ -30,14 +16,95 @@
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
-    <action android:id="@+id/action_global_fragmentAddMoneyAccount" app:destination="@id/fragmentAddMoneyAccount" />
     <fragment
-        android:id="@+id/overviewAllFragment"
-        android:name="com.example.roomrecyclerviewtest.OverviewAllFragment"
-        android:label="fragment_overview_all"
-        tools:layout="@layout/fragment_overview_all" >
+        android:id="@+id/overviewFragment"
+        android:name="com.example.roomrecyclerviewtest.OverviewFragment"
+        android:label="fragment_overview"
+        tools:layout="@layout/fragment_overview" />
+    <fragment
+        android:id="@+id/accountsMainFragment"
+        android:name="com.example.roomrecyclerviewtest.Fragments.AccountsMainFragment"
+        android:label="fragment_acconts_main"
+        tools:layout="@layout/fragment_accounts_main" >
         <action
-            android:id="@+id/action_overviewAllFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_accountsMainFragment_to_addMoneyAccountBottomSheetFragment"
+            app:destination="@id/addMoneyAccountBottomSheetFragment" />
+        <action
+            android:id="@+id/action_accountsMainFragment_to_cardAboutFragment"
+            app:destination="@id/cardAboutFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/operationsFragment"
+        android:name="com.example.roomrecyclerviewtest.OperationsFragment"
+        android:label="fragment_operations"
+        tools:layout="@layout/fragment_operations" >
+        <action
+            android:id="@+id/action_operationsFragment_to_addTransactionBottomSheetFragment"
+            app:destination="@id/addTransactionBottomSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreFunctionsFragment"
+        android:name="com.example.roomrecyclerviewtest.MoreFunctionsFragment"
+        android:label="fragment_more_functions"
+        tools:layout="@layout/fragment_more_functions" />
+    <dialog
+        android:id="@+id/addTransactionBottomSheetFragment"
+        android:name="com.example.roomrecyclerviewtest.AddTransactionBottomSheetFragment"
+        android:label="fragment_add_transaction_bottom_sheet"
+        tools:layout="@layout/fragment_add_transaction_bottom_sheet" >
+        <action
+            android:id="@+id/action_addTransactionBottomSheetFragment_to_addTransactionActivity"
+            app:destination="@id/addTransactionActivity" />
+    </dialog>
+
+    <activity
+        android:id="@+id/addTransactionActivity"
+        android:name="com.example.roomrecyclerviewtest.AddTransactionActivity"
+        android:label="activity_add_transaction"
+        tools:layout="@layout/activity_add_transaction" />
+    <dialog
+        android:id="@+id/addMoneyAccountBottomSheetFragment"
+        android:name="com.example.roomrecyclerviewtest.AddMoneyAccountBottomSheetFragment"
+        android:label="fragment_add_money_account_bottom_sheet"
+        tools:layout="@layout/fragment_add_money_account_bottom_sheet" >
+        <action
+            android:id="@+id/action_addMoneyAccountBottomSheetFragment_to_addCashAccountFragment"
+            app:destination="@id/addCashMoneyAccountFragment" />
+        <action
+            android:id="@+id/action_addMoneyAccountBottomSheetFragment_to_addCardMoneyAccountFragment"
+            app:destination="@id/addCardMoneyAccountFragment" />
+        <action
+            android:id="@+id/action_addMoneyAccountBottomSheetFragment_to_addBankMoneyAccountFragment"
+            app:destination="@id/addBankMoneyAccountFragment" />
+        <action
+            android:id="@+id/action_addMoneyAccountBottomSheetFragment_to_addTargetMoneyAccountFragment"
+            app:destination="@id/addTargetMoneyAccountFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/cardAboutFragment"
+        android:name="com.example.roomrecyclerviewtest.CardAboutFragment"
+        android:label="fragment_card_about"
+        tools:layout="@layout/fragment_card_about" />
+    <fragment
+        android:id="@+id/addCashMoneyAccountFragment"
+        android:name="com.example.roomrecyclerviewtest.AddCashMoneyAccountFragment"
+        android:label="fragment_add_cash_money_account"
+        tools:layout="@layout/fragment_add_cash_money_account" />
+    <fragment
+        android:id="@+id/addCardMoneyAccountFragment"
+        android:name="com.example.roomrecyclerviewtest.AddCardMoneyAccountFragment"
+        android:label="fragment_add_card_money_account"
+        tools:layout="@layout/fragment_add_card_money_account" />
+    <fragment
+        android:id="@+id/addBankMoneyAccountFragment"
+        android:name="com.example.roomrecyclerviewtest.AddBankMoneyAccountFragment"
+        android:label="fragment_add_bank_money_account"
+        tools:layout="@layout/fragment_add_bank_money_account" />
+    <fragment
+        android:id="@+id/addTargetMoneyAccountFragment"
+        android:name="com.example.roomrecyclerviewtest.AddTargetMoneyAccountFragment"
+        android:label="fragment_add_target_money_account"
+        tools:layout="@layout/fragment_add_target_money_account" />
+
+
 </navigation>

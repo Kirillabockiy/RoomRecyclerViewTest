@@ -24,10 +24,10 @@ class OverviewAllFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        card_money_accounts.setOnClickListener(View.OnClickListener {
-
-            view.findNavController().navigate(R.id.action_overviewAllFragment_to_mainFragment)
-        })
+//        card_money_accounts.setOnClickListener(View.OnClickListener {
+//
+//            view.findNavController().navigate(R.id.action_overviewAllFragment_to_mainFragment)
+//        })
 
     }
 }

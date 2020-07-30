@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BarChartView">
+        
+        <attr name="rect_color" format="color"/>
+        <attr name="firstBarColor" format="color"/>
+        <attr name="secondBarColor" format="color"/>
+        <attr name="thirdBarColor" format="color"/>
+        <attr name="fourthBarColor" format="color"/>
+        <attr name="fifthBarColor" format="color"/>
+        <attr name="sixthBarColor" format="color"/>
+        <attr name="seventhBarColor" format="color"/>
+        <attr name="eighthBarColor" format="color"/>
+        <attr name="ninthBarColor" format="color"/>
+        <attr name="tenthBarColor" format="color"/>
+    </declare-styleable>
+
+</resources>

@@ -11,7 +11,7 @@ data class CashItem(
     val id: String,
     val title: String,
     val balance: String
-): RVItemType(RVItemType.CASH_ITEM_TYPE)
+): MoneyAccountListForRV(MoneyAccountListForRV.CASH_ITEM_TYPE)
 
 class CashItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), ItemViewHolder {
 
@@ -19,8 +19,8 @@ class CashItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), It
     val textTitle = itemView.findViewById<TextView>(R.id.txt_cash_title)
     val textBalance = itemView.findViewById<TextView>(R.id.txt_cash_balance)
 
-    override fun bindViews(rvItemType: RVItemType) {
-        val mItem = rvItemType as CashItem
+    override fun bindViews(moneyAccountListForRV: MoneyAccountListForRV) {
+        val mItem = moneyAccountListForRV as CashItem
         textTitle.text = mItem.title
         textBalance.text = mItem.balance
 

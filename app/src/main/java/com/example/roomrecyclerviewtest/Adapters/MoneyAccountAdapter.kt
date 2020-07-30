@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roomrecyclerviewtest.Interfaces.OnMoneyAccountClickListener
-//import com.example.roomrecyclerviewtest.Models.MoneyAccount
+//import com.example.roomrecyclerviewtest.DataBase.Entity.MoneyAccount
 import com.example.roomrecyclerviewtest.R
 
 //class MoneyAccountAdapter (private val context: Context, private val moneyAccounts: List<MoneyAccount>) : RecyclerView.Adapter<MoneyAccountAdapter.ViewHolder>(){

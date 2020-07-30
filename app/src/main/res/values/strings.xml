@@ -21,4 +21,12 @@
         <item>Доллар - $</item>
         <item>Евро</item>
     </string-array>
+
+    <string-array name="bank_list">
+
+        <item>Сбербанк</item>
+        <item>Тинькофф</item>
+        <item>Альфабанк</item>
+        <item>Росбанк</item>
+    </string-array>
 </resources>

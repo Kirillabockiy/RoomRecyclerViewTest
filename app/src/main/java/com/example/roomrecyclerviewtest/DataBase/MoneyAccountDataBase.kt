@@ -1,44 +1,49 @@
 package com.example.roomrecyclerviewtest.DataBase
 
+//import com.example.roomrecyclerviewtest.DataBase.Entity.MoneyAccount
+
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.roomrecyclerviewtest.Dao.MoneyAccountDao
-import com.example.roomrecyclerviewtest.Models.MoneyAccount
-//import com.example.roomrecyclerviewtest.Models.MoneyAccount
-import com.example.roomrecyclerviewtest.Models.CardMoneyAccount
-import com.example.roomrecyclerviewtest.Models.CashMoneyAccount
+import com.example.roomrecyclerviewtest.DataBase.Dao.AddTransactionDao
+import com.example.roomrecyclerviewtest.DataBase.Dao.MoneyAccountDao
+import com.example.roomrecyclerviewtest.DataBase.Entity.*
 
 
-@Database(entities = [CardMoneyAccount::class, MoneyAccount::class, CashMoneyAccount::class], version = 1, exportSchema = false)
+@Database(
+    entities = [
+    MoneyAccount::class,
+    Bank::class,
+    Operation::class,
+    IncomeCategory::class,
+    ConsumptionCategory::class],
+    version = 1,
+    exportSchema = true
+)
+
 abstract class MoneyAccountDataBase : RoomDatabase() {
 
     abstract fun moneyAccountDao(): MoneyAccountDao
+    abstract fun addTransactionDao(): AddTransactionDao
 
     companion object {
 
         @Volatile
         private var INSTANCE: MoneyAccountDataBase? = null
 
-        fun getDataBase(context: Context): MoneyAccountDataBase? {
-            if (INSTANCE == null) {
-
-                synchronized(MoneyAccountDataBase::class.java) {
-                    if (INSTANCE == null) {
-
-                        INSTANCE= Room.databaseBuilder(
-                            context.applicationContext,
-                            MoneyAccountDataBase::class.java, "money_account_database"
-                        )
-                            .build()
-                    }
-
-                }
+        fun getInstance(context: Context) :MoneyAccountDataBase =
+            INSTANCE ?: synchronized(this) {
+                INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
             }
 
-            return INSTANCE
-        }
-    }
+        fun buildDatabase(context: Context) =
+            Room.databaseBuilder(context.applicationContext,
+                MoneyAccountDataBase::class.java, "money_account_database").build()
 
+//                .createFromAsset("Database/MoneyAccountDB.db")
+
+
+    }
 }
+

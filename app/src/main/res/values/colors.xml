@@ -6,10 +6,11 @@
     <color name="white">#FFFFFF</color>
     <color name="light_icon">#FFFFFF</color>
     <color name="dark_icon">#000000</color>
-    <color name="colorAdditional">#366BA5</color>
+    <color name="colorAdditional">#274461</color>
 
 
 
     <color name="bgDefault">#FFFFFF</color>
-    <color name="light_gray">#FFAB91</color>
+    <color name="light_gray">#A19D9D</color>
+    <color name="color_time_line">#4A148C</color>
 </resources>

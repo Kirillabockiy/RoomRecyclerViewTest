@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentAboutMoneyAccount"
-        android:name="com.example.roomrecyclerviewtest.Fragments.AboutMoneyAccountFragment"
+        android:name="com.example.roomrecyclerviewtest.AboutMoneyAccountFragment"
         android:label="fragment_about_money_account"
         tools:layout="@layout/fragment_about_money_account" >
         <argument
@@ -23,7 +23,7 @@
         tools:layout="@layout/fragment_overview" />
     <fragment
         android:id="@+id/accountsMainFragment"
-        android:name="com.example.roomrecyclerviewtest.Fragments.AccountsMainFragment"
+        android:name="com.example.roomrecyclerviewtest.AccountsMainFragment"
         android:label="fragment_acconts_main"
         tools:layout="@layout/fragment_accounts_main" >
         <action
@@ -46,22 +46,27 @@
         android:id="@+id/moreFunctionsFragment"
         android:name="com.example.roomrecyclerviewtest.MoreFunctionsFragment"
         android:label="fragment_more_functions"
-        tools:layout="@layout/fragment_more_functions" />
+        tools:layout="@layout/fragment_more_functions" >
+        <action
+            android:id="@+id/action_moreFunctionsFragment_to_addBankFragment"
+            app:destination="@id/addBankFragment" />
+    </fragment>
     <dialog
         android:id="@+id/addTransactionBottomSheetFragment"
         android:name="com.example.roomrecyclerviewtest.AddTransactionBottomSheetFragment"
         android:label="fragment_add_transaction_bottom_sheet"
         tools:layout="@layout/fragment_add_transaction_bottom_sheet" >
         <action
-            android:id="@+id/action_addTransactionBottomSheetFragment_to_addTransactionActivity"
-            app:destination="@id/addTransactionActivity" />
+            android:id="@+id/action_addTransactionBottomSheetFragment_to_addOperationIncomeFragment"
+            app:destination="@id/addOperationIncomeFragment" />
+        <action
+            android:id="@+id/action_addTransactionBottomSheetFragment_to_addConsumptionOperationFragment"
+            app:destination="@id/addConsumptionOperationFragment" />
+        <action
+            android:id="@+id/action_addTransactionBottomSheetFragment_to_addOperationTransferFragment"
+            app:destination="@id/addOperationTransferFragment" />
     </dialog>
 
-    <activity
-        android:id="@+id/addTransactionActivity"
-        android:name="com.example.roomrecyclerviewtest.AddTransactionActivity"
-        android:label="activity_add_transaction"
-        tools:layout="@layout/activity_add_transaction" />
     <dialog
         android:id="@+id/addMoneyAccountBottomSheetFragment"
         android:name="com.example.roomrecyclerviewtest.AddMoneyAccountBottomSheetFragment"
@@ -97,7 +102,7 @@
         tools:layout="@layout/fragment_add_card_money_account" />
     <fragment
         android:id="@+id/addBankMoneyAccountFragment"
-        android:name="com.example.roomrecyclerviewtest.AddBankMoneyAccountFragment"
+        android:name="com.example.roomrecyclerviewtest.AddBankMoneyAccountBottomSheetFragment"
         android:label="fragment_add_bank_money_account"
         tools:layout="@layout/fragment_add_bank_money_account" />
     <fragment
@@ -105,6 +110,47 @@
         android:name="com.example.roomrecyclerviewtest.AddTargetMoneyAccountFragment"
         android:label="fragment_add_target_money_account"
         tools:layout="@layout/fragment_add_target_money_account" />
+    <dialog
+        android:id="@+id/addBankFragment"
+        android:name="com.example.roomrecyclerviewtest.AddBankFragment"
+        android:label="fragment_add_bank"
+        tools:layout="@layout/fragment_add_bank" />
+    <fragment
+        android:id="@+id/addOperationIncomeFragment"
+        android:name="com.example.roomrecyclerviewtest.AddOperationIncomeFragment"
+        android:label="fragment_add_operation_income"
+        tools:layout="@layout/fragment_add_operation_income" />
+    <fragment
+        android:id="@+id/addIncomeConsumptionCategoryFragment"
+        android:name="com.example.roomrecyclerviewtest.AddIncomeConsumptionCategoryFragment"
+        android:label="fragment_add_income_consumption_category"
+        tools:layout="@layout/fragment_add_income_consumption_category" />
+    <action android:id="@+id/action_global_addIncomeConsumptionCategoryFragment" app:destination="@id/addIncomeConsumptionCategoryFragment" />
+    <action android:id="@+id/action_global_addMoneyAccountBottomSheetFragment" app:destination="@id/addMoneyAccountBottomSheetFragment" />
+    <fragment
+        android:id="@+id/addConsumptionOperationFragment"
+        android:name="com.example.roomrecyclerviewtest.AddOperationConsumptionFragment"
+        android:label="fragment_add_consumption_operation"
+        tools:layout="@layout/fragment_add_consumption_operation" >
+        <action
+            android:id="@+id/action_addConsumptionOperationFragment_to_selectCategoryConsumptionOperationDialogFragment"
+            app:destination="@id/selectCategoryConsumptionOperationDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/consumptionCategoryFragment"
+        android:name="com.example.roomrecyclerviewtest.ConsumptionCategoryFragment"
+        android:label="fragment_consumption_category"
+        tools:layout="@layout/fragment_consumption_category" /><action android:id="@+id/action_global_consumptionCategoryFragment" app:destination="@id/consumptionCategoryFragment"/>
+    <fragment
+        android:id="@+id/addOperationTransferFragment"
+        android:name="com.example.roomrecyclerviewtest.AddOperationTransferFragment"
+        android:label="fragment_add_operation_transfer"
+        tools:layout="@layout/fragment_add_operation_transfer" />
+    <dialog
+        android:id="@+id/selectCategoryConsumptionOperationDialogFragment"
+        android:name="com.example.roomrecyclerviewtest.SelectCategoryConsumptionOperationDialogFragment"
+        android:label="fragment_select_category_consumption_operation_dialog"
+        tools:layout="@layout/fragment_select_category_consumption_operation_dialog" />
 
 
 </navigation>

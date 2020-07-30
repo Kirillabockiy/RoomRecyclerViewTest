@@ -13,7 +13,7 @@ import com.kirillabockiy.examplemvvmapp.Model.*
 
 
 class MultipleTypesAdapter (val context: Context,
-                            var itemList: List<RVItemType>
+                            var moneyAccountItemList: List<MoneyAccountListForRV>
                            ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -33,11 +33,11 @@ class MultipleTypesAdapter (val context: Context,
     }
 
     override fun getItemViewType(position: Int): Int {
-        val type = when (itemList[position].itemType) {
-            RVItemType.HEADER_ITEM_TYPE -> HEADER_ITEM_TYPE
-            RVItemType.CARD_ITEM_TYPE -> CARD_ITEM_TYPE
-            RVItemType.CASH_ITEM_TYPE -> CASH_ITEM_TYPE
-            RVItemType.TARGET_ITEM_TYPE -> TARGET_ITEM_TYPE
+        val type = when (moneyAccountItemList[position].itemType) {
+            MoneyAccountListForRV.HEADER_ITEM_TYPE -> HEADER_ITEM_TYPE
+            MoneyAccountListForRV.CARD_ITEM_TYPE -> CARD_ITEM_TYPE
+            MoneyAccountListForRV.CASH_ITEM_TYPE -> CASH_ITEM_TYPE
+            MoneyAccountListForRV.TARGET_ITEM_TYPE -> TARGET_ITEM_TYPE
 
             else -> DEFAULT
         }
@@ -56,13 +56,13 @@ class MultipleTypesAdapter (val context: Context,
     }
 
     override fun getItemCount(): Int {
-        return itemList.size
+        return moneyAccountItemList.size
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as ItemViewHolder).bindViews(itemList[position])
+        (holder as ItemViewHolder).bindViews(moneyAccountItemList[position])
 
-        holder.itemView.setOnClickListener{calback?.onMoneyAccountClickListener(itemList[position])}
+        holder.itemView.setOnClickListener{calback?.onMoneyAccountClickListener(moneyAccountItemList[position])}
 //        holder.itemView.setOnLongClickListener{calback?.onMoneyAccountLongClickListener(itemList[position])}
     }
 

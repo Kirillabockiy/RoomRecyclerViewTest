@@ -54,24 +54,20 @@
             android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputBankNameLayout"
+    <Spinner
+        android:id="@+id/spinner_bank_name_card_account"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/textInputCardNumberLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputTitleLayout">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtxt_bank_name_card_account"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Название банка"
-            android:inputType="text"
-            android:maxLength="32"
-            android:singleLine="true" />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginStart="16dp"
+
+
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputCardNumberLayout"
+        app:layout_constraintEnd_toStartOf="@+id/textInputCardNumberLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputTitleLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputCardNumberLayout"
@@ -79,7 +75,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textInputBankNameLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/spinner_bank_name_card_account"
         app:layout_constraintTop_toBottomOf="@+id/textInputTitleLayout">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -88,7 +85,7 @@
             android:layout_height="wrap_content"
             android:hint="Номер карты"
             android:inputType="number"
-            android:maxLength="32"
+            android:maxLength="4"
             android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,11 +94,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_currency_card_account"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputBankNameLayout">
+        app:layout_constraintTop_toBottomOf="@+id/textInputCardNumberLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtxt_balance_card_account"
@@ -115,7 +111,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_currency_card_account"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
@@ -129,7 +125,7 @@
         app:layout_constraintTop_toTopOf="@+id/textInputLayout3" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/is_overal_balance_cash_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -154,6 +150,6 @@
         android:textSize="18sp"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/is_overal_balance_cash_account" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

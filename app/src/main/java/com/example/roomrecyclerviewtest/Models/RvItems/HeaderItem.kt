@@ -9,16 +9,16 @@ import com.example.roomrecyclerviewtest.R
 
 data class HeaderItem(
     var text: String
-): RVItemType(RVItemType.HEADER_ITEM_TYPE)
+): MoneyAccountListForRV(MoneyAccountListForRV.HEADER_ITEM_TYPE)
 
 
 class HeaderItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), ItemViewHolder {
 
 
-    val textView = itemView.findViewById<TextView>(R.id.txt_balance)
+    val textView = itemView.findViewById<TextView>(R.id.txt_header)
 
-    override fun bindViews(rvItemType: RVItemType) {
-        val mItem = rvItemType as HeaderItem
+    override fun bindViews(moneyAccountListForRV: MoneyAccountListForRV) {
+        val mItem = moneyAccountListForRV as HeaderItem
         textView.text = mItem.text
 
     }

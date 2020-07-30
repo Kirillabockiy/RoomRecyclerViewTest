@@ -13,7 +13,7 @@ data class CardItem(
     val bankName: String,
     val cardNumber: String,
     val balance: String
-): RVItemType(RVItemType.CARD_ITEM_TYPE)
+): MoneyAccountListForRV(MoneyAccountListForRV.CARD_ITEM_TYPE)
 
 class CardItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), ItemViewHolder {
 
@@ -21,11 +21,11 @@ class CardItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), It
     val txtTitle = itemView.findViewById<TextView>(R.id.txt_card_title)
     val txtBankName = itemView.findViewById<TextView>(R.id.txt_bank_name)
     val txtCardNumber = itemView.findViewById<TextView>(R.id.txt_card_number)
-    val txtBalance = itemView.findViewById<TextView>(R.id.txt_balance)
+    val txtBalance = itemView.findViewById<TextView>(R.id.txt_header)
 
 
-    override fun bindViews(rvItemType: RVItemType) {
-        val mItem = rvItemType as CardItem
+    override fun bindViews(moneyAccountListForRV: MoneyAccountListForRV) {
+        val mItem = moneyAccountListForRV as CardItem
         txtTitle.text = mItem.title
         txtBankName.text = mItem.bankName
         txtCardNumber.text = mItem.cardNumber

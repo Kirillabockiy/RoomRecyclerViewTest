@@ -15,7 +15,7 @@ data class TargetItem(
     var targetAmount: String,
     var progress: Int
 
-): RVItemType(RVItemType.TARGET_ITEM_TYPE)
+): MoneyAccountListForRV(MoneyAccountListForRV.TARGET_ITEM_TYPE)
 
 class TargetItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), ItemViewHolder {
 
@@ -26,22 +26,14 @@ class TargetItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), 
     val progress = itemView.findViewById<ProgressBar>(R.id.progress_bar)
 
 
-    override fun bindViews(rvItemType: RVItemType) {
-        val mItem = rvItemType as TargetItem
+    override fun bindViews(moneyAccountListForRV: MoneyAccountListForRV) {
+        val mItem = moneyAccountListForRV as TargetItem
 
 
         txtTitle.text = mItem.title
         txtCurrentAmount.text = mItem.currentAmount
         txtTargetAmount.text = mItem.targetAmount
         progress.progress = mItem.progress
-
-
-
-
-//        txtTitle.text = "mItem.title"
-//        txtBankName.text = "mItem.bankName"
-//        txtCardNumber.text = "mItem.cardNumber"
-//        txtBalance.text = "mItem.balance"
 
 
     }

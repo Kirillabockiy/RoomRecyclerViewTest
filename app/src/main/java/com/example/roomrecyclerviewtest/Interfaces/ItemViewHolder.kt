@@ -1,8 +1,8 @@
 package com.example.roomrecyclerviewtest.Interfaces
 
-import com.kirillabockiy.examplemvvmapp.Model.RVItemType
+import com.kirillabockiy.examplemvvmapp.Model.MoneyAccountListForRV
 
 interface ItemViewHolder {
-    fun bindViews(rvItemType: RVItemType)
+    fun bindViews(moneyAccountListForRV: MoneyAccountListForRV)
 
 }

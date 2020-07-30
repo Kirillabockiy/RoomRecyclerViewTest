@@ -31,17 +31,17 @@ class AddTransactionBottomSheetFragment: BottomSheetDialogFragment() {
 
         card_consumption.setOnClickListener(View.OnClickListener {
 
-            findNavController().navigate(R.id.action_addTransactionBottomSheetFragment_to_addTransactionActivity)
+            findNavController().navigate(R.id.action_addTransactionBottomSheetFragment_to_addConsumptionOperationFragment)
         })
 
         card_transfer.setOnClickListener(View.OnClickListener {
 
-            findNavController().navigate(R.id.action_addTransactionBottomSheetFragment_to_addTransactionActivity)
+            findNavController().navigate(R.id.action_addTransactionBottomSheetFragment_to_addOperationTransferFragment)
         })
 
         card_income.setOnClickListener(View.OnClickListener {
 
-            findNavController().navigate(R.id.action_addTransactionBottomSheetFragment_to_addTransactionActivity)
+            findNavController().navigate(R.id.action_addTransactionBottomSheetFragment_to_addOperationIncomeFragment)
         })
     }
 }
